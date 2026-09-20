@@ -15,7 +15,38 @@ export type NavItem = {
   href: string;
 };
 
-export const siteConfig = {
+export type SiteConfig = {
+  name: string;
+  shortName: string;
+  logoSrc: string;
+  descriptor: string;
+  url: string;
+  contact: {
+    whatsapp: string;
+    phone: string;
+    email: string;
+    address: {
+      line1: string;
+      city: string;
+      state: string;
+      country: string;
+    };
+  };
+  social: {
+    linkedin: string;
+    instagram: string;
+    facebook: string;
+    x: string;
+  };
+  cta: {
+    primary: { label: string; href: string };
+    secondary: { label: string; href: string };
+    whatsapp: { label: string };
+  };
+  whatsappMessage: string;
+};
+
+export const siteConfig: SiteConfig = {
   /** Confirmed. Always render the company name exactly like this. */
   name: "JP2 Solar Energy",
   /** Used only where the full name will not fit, such as the mobile bar. */
@@ -25,7 +56,7 @@ export const siteConfig = {
    * Replace with the official JP2 logo when it is provided.
    * Set `logoSrc` to a file in /public and the wordmark is swapped out.
    */
-  logoSrc: "" as string,
+  logoSrc: "",
 
   /** Short descriptor used in the footer and metadata. */
   descriptor: "Solar and energy solutions",
@@ -64,7 +95,7 @@ export const siteConfig = {
   /** Prefilled WhatsApp greeting. Edit freely. */
   whatsappMessage:
     "Hello JP2 Solar Energy. I would like to discuss an energy solution for my property.",
-} as const;
+};
 
 export const navigation: NavItem[] = [
   { label: "Home", href: "/" },
