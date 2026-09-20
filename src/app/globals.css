@@ -177,3 +177,13 @@
     transform: none;
   }
 }
+
+@keyframes scrollcue {
+  0% {
+    transform: translateY(-100%);
+  }
+  55%,
+  100% {
+    transform: translateY(300%);
+  }
+}
